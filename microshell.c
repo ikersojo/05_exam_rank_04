@@ -2,6 +2,14 @@
 #include <sys/wait.h>
 #include <string.h>
 
+/*not needed in exam, but necessary if you want to use this tester:
+https://github.com/Glagan/42-exam-rank-04/blob/master/microshell/test.sh*/
+// #ifdef TEST_SH
+// # define TEST		1
+// #else
+// # define TEST		0
+// #endif
+
 int	ft_putstr_fd2(char *str, char *arg)
 {
 	while (*str)
@@ -82,5 +90,7 @@ int	main(int argc, char *argv[], char *env[])
 		}
 	}
 	close(tmp_fd);
+	// if (TEST)		// not needed in exam, but necessary if you want to use this tester:
+	// 	while (1);	// https://github.com/Glagan/42-exam-rank-04/blob/master/microshell/test.sh
 	return (0);
 }
