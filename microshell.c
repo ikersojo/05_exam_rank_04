@@ -91,6 +91,8 @@ int	main(int argc, char **argv, char ** env)
 			{
 				close (tempfd);
 				close(fd[1]);
+				while (waitpid(-1, NULL, WUNTRACED) != -1)
+					;
 				tempfd = fd[0];
 			}
 		}
